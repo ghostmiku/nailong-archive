@@ -819,7 +819,7 @@ function render(reset){
     const c=document.createElement("div");
     c.className="cell rv";
     c.style.transitionDelay=(i%12)*22+"ms";
-    c.innerHTML=`<img loading="lazy" src="${item.src}" alt="${item.t}">
+    c.innerHTML=`<img loading="${item.gif?'eager':'lazy'}" decoding="async" src="${item.src}" alt="${item.t}">
       ${item.gif?'<span class="badge">动图</span>':''}
       <span class="cap">${item.t}</span>`;
     const im=c.querySelector("img");
